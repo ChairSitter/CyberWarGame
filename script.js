@@ -276,8 +276,9 @@ const round = () => {
                 const computerPlayLogic = () => {
                     let cardOppPlayed;
                     //if gold is less than 5
+                    let randomNumber = Math.random();
                     if (goldNumber <= 5) {
-                        if (Math.random() < .15) {
+                        if (randomNumber < .15) {
                             if (oppCardsArray.length > 2) {
                                 cardOppPlayed = 2;
                             } else if (oppCardsArray.length > 1) {
@@ -285,7 +286,7 @@ const round = () => {
                             } else {
                                 cardOppPlayed = 0;
                             }
-                        } else if (Math.random() >= .15 && Math.random() < .45) {
+                        } else if (randomNumber >= .15 && randomNumber < .45) {
                             if (oppCardsArray.length > 1) {
                                 cardOppPlayed = 1;
                             } else {
@@ -299,7 +300,7 @@ const round = () => {
                         if (oppCardsArray.length == 5) {
                             cardOppPlayed = 2;
                         } else if (oppCardsArray.length == 4) {
-                            if (Math.random() < .5) {
+                            if (randomNumber < .5) {
                                 cardOppPlayed = 1;
                             } else {
                                 cardOppPlayed = 2;
@@ -307,7 +308,7 @@ const round = () => {
                         } else if (oppCardsArray.length == 3) {
                             cardOppPlayed = 1;
                         } else if (oppCardsArray.length == 2) {
-                            if (Math.random() < .5) {
+                            if (randomNumber < .5) {
                                 cardOppPlayed = 0;
                             } else {
                                 cardOppPlayed = 1;
@@ -315,9 +316,64 @@ const round = () => {
                         } else {
                             cardOppPlayed = 0;
                         }
-                    //if gold is 11 or more
+                    } else if (goldNumber > 10 && goldNumber <= 15){
+                        if(oppCardsArray.length === 5){
+                            if(randomNumber < .2){
+                                for (let i in oppCardsArray) {
+                                    if (oppCardsArray[i].getShape() === 'circle') {
+                                        cardOppPlayed = i;
+                                    } else {
+                                        cardOppPlayed = oppCardsArray.length - 1;
+                                    }
+                                }
+                            } else if (randomNumber >= .2 && randomNumber < .6){
+                                    cardOppPlayed = 4;
+                            } else {
+                                cardOppPlayed = 3;
+                            }
+                        } else if (oppCardsArray.length === 4){
+                            if(randomNumber < .2){
+                                for (let i in oppCardsArray) {
+                                    if (oppCardsArray[i].getShape() === 'circle') {
+                                        cardOppPlayed = i;
+                                    } else {
+                                        cardOppPlayed = oppCardsArray.length - 1;
+                                    }
+                                }
+                            } else if (randomNumber >= .2 && randomNumber < .70){
+                                    cardOppPlayed = 3;
+                            } else {
+                                cardOppPlayed = 2;
+                            }
+                        } else if (oppCardsArray.length === 3){
+                            if(randomNumber < .2){
+                                for (let i in oppCardsArray) {
+                                    if (oppCardsArray[i].getShape() === 'circle') {
+                                        cardOppPlayed = i;
+                                    } else {
+                                        cardOppPlayed = oppCardsArray.length - 1;
+                                    }
+                                }
+                            } else {
+                                cardOppPlayed = 1;
+                            }
+                        } else if (oppCardsArray.length === 2){
+                            if(randomNumber < .2){
+                                for (let i in oppCardsArray) {
+                                    if (oppCardsArray[i].getShape() === 'circle') {
+                                        cardOppPlayed = i;
+                                    } else {
+                                        cardOppPlayed = oppCardsArray.length - 1;
+                                    }
+                                }
+                            } else {
+                                cardOppPlayed = 0;
+                            }
+                        } else {
+                            cardOppPlayed = 0;
+                        }
                     } else {
-                        if (Math.random() < .4) {
+                        if (randomNumber < .4) {
                             for (let i in oppCardsArray) {
                                 if (oppCardsArray[i].getShape() === 'circle') {
                                     cardOppPlayed = i;
