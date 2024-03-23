@@ -85,13 +85,13 @@ body {
 #opp-played {
     height: 220px;
     width: 160px;
-    border: 5px black dashed;
+    border: 5px rgb(0, 27, 0) dashed;
 }
 
 #your-played {
     height: 220px;
     width: 160px;
-    border: 5px black dashed;
+    border: 5px rgb(0, 27, 0) dashed;
 }
 
 #play-button {
