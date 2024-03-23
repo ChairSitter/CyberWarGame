@@ -1,0 +1,259 @@
+/* * {
+    border: 1px red solid;
+} */
+
+* {
+    box-sizing: border-box;
+}
+
+header {
+    background-color: black;
+    border-bottom: yellow;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 49, 0);
+}
+
+/*Rules aside*/
+#rules {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 600px;
+    width: 350px;
+    position: fixed;
+    background-color: rgb(98, 110, 138);
+    border: black solid 5px;
+    left: 0px;
+    opacity: 75%;
+    margin-left: 5px;
+    display: none;
+    padding: 5px;
+    text-align: center;
+}
+
+#show-rules {
+    position: absolute;
+    bottom: 3px;
+    left: 3px;
+}
+
+#hide-rules {
+    position: absolute;
+    bottom: 3px;
+    display: none;
+    left: 3px;
+}
+
+
+/*Center of the board*/
+#gold-display {
+    text-align: center;
+    font-size: 60px;
+    color: darkgoldenrod;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;;
+    border: darkgoldenrod solid 5px;
+    background-color: gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 15px 5px 15px;
+}
+
+#middle-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#opp-played {
+    height: 220px;
+    width: 160px;
+    border: 5px black dashed;
+}
+
+#your-played {
+    height: 220px;
+    width: 160px;
+    border: 5px black dashed;
+}
+
+#play-button {
+    padding: 10px;
+}
+
+#gold-play {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 178px;
+}
+
+#opp-score {
+    height: 210px;
+    width: 175px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    color: yellow;
+    margin: 15px;
+}
+
+#your-score {
+    height: 210px;
+    width: 175px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    color: yellow;
+    margin: 15px;
+}
+
+#opp-score-number {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 80px;
+    text-align: center;
+    margin: 0;
+}
+
+#your-score-number {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 80px;
+    text-align: center;
+    margin: 0;
+}
+
+#winner-message {
+    color: white;
+    height: 15px;
+}
+
+#round-turn {
+    color: white;
+}
+
+#your-color-bonus, #opp-color-bonus {
+    height: 30px;
+    width: 140px;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+}
+
+/*Shape divs*/
+
+.circle-div {
+    margin: 15px;
+    height: 23px;
+    width: 23px;
+    background-image: url("./assets/images/circle.svg");
+    background-position: center;
+}
+.square-div {
+    margin: 15px;
+    height: 23px;
+    width: 23px;
+    background-image: url("./assets/images/square.svg");
+    background-position: center;
+}
+.triangle-div {
+    margin: 15px;
+    height: 23px;
+    width: 23px;
+    background-image: url("./assets/images/triangle.svg");
+    background-position: center;
+}
+.pentagon-div {
+    margin: 15px;
+    height: 23px;
+    width: 23px;
+    background-image: url("./assets/images/pentagon.svg");
+    background-position: center;
+}
+.octagon-div {
+    margin: 15px;
+    height: 23px;
+    width: 23px;
+    background-image: url("./assets/images/octagon.svg");
+    background-position: center;
+}
+.star-div {
+    margin: 15px;
+    height: 23px;
+    width: 23px;
+    background-image: url("./assets/images/star.svg");
+    background-position: center;
+}
+
+/*Cards (element is div)*/
+.your-card {
+    display: flex;
+    height: 210px;
+    width: 150px;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    border: solid black 4px;
+    border-radius: 15px;
+    margin: 20px 10px 20px 10px;
+}
+
+.opp-card {
+    display: flex;
+    height: 210px;
+    width: 150px;    
+    border-radius: 15px;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-image: radial-gradient(black, rgb(85, 31, 0), black, rgb(58, 1, 1), black);
+    border: solid black 4px;
+    margin: 20px 10px 20px 10px;
+}
+
+#your-played .your-card, #opp-played .your-card {
+    margin: 0 0 0 0;
+}
+
+/* .opp-card:hover {
+    position: relative;
+    top: 10px;
+} */
+
+#your-cards .your-card:hover {
+    position: relative;
+    bottom: 10px;
+    cursor: pointer;
+}
+
+/*Div that holds 5 cards*/
+#opp-cards {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0px;
+}
+
+#your-cards {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0px;
+}
