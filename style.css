@@ -6,13 +6,13 @@
     box-sizing: border-box;
 }
 
-header {
+/* header {
     background-color: black;
     border-bottom: yellow;
     text-transform: uppercase;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
-}
+} */
 
 html {
     height: 100%;
@@ -113,7 +113,9 @@ body {
     font-size: 1rem;
     text-align: center;
     color: yellow;
-    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 #your-score {
@@ -123,7 +125,9 @@ body {
     font-size: 1rem;
     text-align: center;
     color: yellow;
-    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 #opp-score-number {
@@ -228,6 +232,10 @@ body {
     margin: 20px 10px 20px 10px;
 }
 
+.your-card:hover {
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.63);
+}
+
 #your-played .your-card, #opp-played .your-card {
     margin: 0 0 0 0;
 }
@@ -256,4 +264,12 @@ body {
     justify-content: center;
     position: fixed;
     bottom: 0px;
+}
+
+@media only screen and (max-width: 500px){
+    #your-card, #opp-card {
+        width: 105px;
+        height: 75px;
+    }
+
 }
