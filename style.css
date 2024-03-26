@@ -257,7 +257,7 @@ body {
     .your-card, .opp-card {
         height: 105px;
         width: 70px;
-        margin: 0;
+        margin: 0 1px 0 1px;
     }
     .circle-div {
         margin: 3px;
