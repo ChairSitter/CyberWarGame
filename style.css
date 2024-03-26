@@ -232,24 +232,19 @@ body {
     margin: 20px 10px 20px 10px;
 }
 
-/* .your-card:hover {
-    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.63);
-} */
-
 #your-played .your-card, #opp-played .your-card {
     margin: 0 0 0 0;
 }
 
-/* .opp-card:hover {
-    position: relative;
-    top: 10px;
-} */
-
-#your-cards .your-card:hover {
-    position: relative;
-    bottom: 10px;
-    cursor: pointer;
+@media (hover: hover){
+    #your-cards .your-card:hover {
+        position: relative;
+        bottom: 10px;
+        cursor: pointer;
+        box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.63);
+    }
 }
+
 
 /*Div that holds 5 cards*/
 #opp-cards {
