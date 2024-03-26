@@ -6,14 +6,6 @@
     box-sizing: border-box;
 }
 
-/* header {
-    background-color: black;
-    border-bottom: yellow;
-    text-transform: uppercase;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
-} */
-
 html {
     height: 100%;
 }
@@ -262,9 +254,133 @@ body {
 }
 
 @media only screen and (max-width: 500px){
-    #your-card, #opp-card {
-        width: 105px;
-        height: 75px;
+    .your-card, .opp-card {
+        height: 95px;
+        width: 60px;
+        margin: 0;
     }
-
+    .circle-div {
+        margin: 2px;
+        height: 15px;
+        width: 15px;
+        background-image: url("./assets/images/small-shapes/circlesmall.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .square-div {
+        margin: 2px;
+        height: 15px;
+        width: 15px;
+        background-image: url("./assets/images/small-shapes/squaresmall.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .triangle-div {
+        margin: 2px;
+        height: 15px;
+        width: 15px;
+        background-image: url("./assets/images/small-shapes/trianglesmall.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .pentagon-div {
+        margin: 2px;
+        height: 15px;
+        width: 15px;
+        background-image: url("./assets/images/small-shapes/pentagonsmall.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .octagon-div {
+        margin: 2px;
+        height: 15px;
+        width: 15px;
+        background-image: url("./assets/images/small-shapes/octagonsmall.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .star-div {
+        margin: 2px;
+        height: 15px;
+        width: 15px;
+        background-image: url("./assets/images/small-shapes/starsmall.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    #opp-played {
+        height: 105px;
+        width: 70px;
+        border: 5px rgb(0, 30, 0) dashed;
+    }
+    #your-played {
+        height: 105px;
+        width: 70px;
+        border: 5px rgb(0, 30, 0) dashed;
+    }
+    #gold-play {
+        width: 89px;
+    }
+    #gold-display {
+        text-align: center;
+        font-size: 30px;
+        color: darkgoldenrod;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        width: 62.5px;
+        height: 62.5px;
+        border-radius: 50%;
+        border: darkgoldenrod solid 2.5px;
+        background-color: gold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+    #play-button {
+        padding: 0;
+        font-size: 10px;
+    }
+    #opp-score-number {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 35px;
+        text-align: center;
+        margin: 0;
+    }
+    #your-score-number {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 35px;
+        text-align: center;
+        margin: 0;
+    }
+    #opp-score {
+        height: 105px;
+        width: 87px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 10px;
+        text-align: center;
+        color: yellow;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    
+    #your-score {
+        height: 105px;
+        width: 87px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 10px;
+        text-align: center;
+        color: yellow;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    #round-turn {
+        color: white;
+        font-size: 10px;
+        text-align: center;
+    }
+    #winner-message {
+        color: white;
+        height: 8px;
+    }
 }
