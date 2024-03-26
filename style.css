@@ -391,6 +391,7 @@ body {
         position: fixed;
         background-color: rgb(98, 110, 138);
         border: black solid 5px;
+        left: auto;
         top: 0px;
         opacity: 100%;
         margin-left: 5px;
@@ -398,6 +399,19 @@ body {
         padding: 5px;
         text-align: center;
         z-index: 5;
+    }
+    #show-rules {
+        position: absolute;
+        bottom: 30px;
+        left: 3px;
+        opacity: 50%;
+    }
+    #hide-rules {
+        position: absolute;
+        bottom: 30px;
+        display: none;
+        left: 3px;
+        opacity: 50%;
     }
     #your-color-bonus, #opp-color-bonus {
         font-size: 8px;
