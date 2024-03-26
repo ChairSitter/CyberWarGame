@@ -398,4 +398,9 @@ body {
         text-align: center;
         z-index: 5;
     }
+    #your-color-bonus, #opp-color-bonus {
+        font-size: 8px;
+        font-family: 'Times New Roman', Times, serif;
+        color: white;
+    }
 }
