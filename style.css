@@ -380,7 +380,7 @@ body {
     }
     #winner-message {
         color: white;
-        height: 8px;
+        font-size: 10px;
     }
     #rules {
         color: white;
