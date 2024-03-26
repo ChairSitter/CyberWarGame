@@ -232,9 +232,9 @@ body {
     margin: 20px 10px 20px 10px;
 }
 
-.your-card:hover {
+/* .your-card:hover {
     box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.63);
-}
+} */
 
 #your-played .your-card, #opp-played .your-card {
     margin: 0 0 0 0;
