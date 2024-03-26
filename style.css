@@ -235,6 +235,9 @@ body {
         cursor: pointer;
         box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.63);
     }
+    #rules {
+        opacity: 100%;
+    }
 }
 
 
