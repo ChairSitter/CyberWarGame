@@ -390,7 +390,7 @@ body {
         position: fixed;
         background-color: rgb(98, 110, 138);
         border: black solid 5px;
-        left: 0px;
+        top: 0px;
         opacity: 100%;
         margin-left: 5px;
         display: none;
