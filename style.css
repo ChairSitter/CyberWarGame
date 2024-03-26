@@ -255,12 +255,12 @@ body {
 
 @media only screen and (max-width: 500px){
     .your-card, .opp-card {
-        height: 95px;
-        width: 60px;
+        height: 105px;
+        width: 70px;
         margin: 0;
     }
     .circle-div {
-        margin: 2px;
+        margin: 3px;
         height: 15px;
         width: 15px;
         background-image: url("./assets/images/small-shapes/circlesmall.svg");
@@ -268,7 +268,7 @@ body {
         background-position: center;
     }
     .square-div {
-        margin: 2px;
+        margin: 3px;
         height: 15px;
         width: 15px;
         background-image: url("./assets/images/small-shapes/squaresmall.svg");
@@ -276,7 +276,7 @@ body {
         background-position: center;
     }
     .triangle-div {
-        margin: 2px;
+        margin: 3px;
         height: 15px;
         width: 15px;
         background-image: url("./assets/images/small-shapes/trianglesmall.svg");
@@ -284,7 +284,7 @@ body {
         background-position: center;
     }
     .pentagon-div {
-        margin: 2px;
+        margin: 3px;
         height: 15px;
         width: 15px;
         background-image: url("./assets/images/small-shapes/pentagonsmall.svg");
@@ -292,7 +292,7 @@ body {
         background-position: center;
     }
     .octagon-div {
-        margin: 2px;
+        margin: 3px;
         height: 15px;
         width: 15px;
         background-image: url("./assets/images/small-shapes/octagonsmall.svg");
@@ -300,7 +300,7 @@ body {
         background-position: center;
     }
     .star-div {
-        margin: 2px;
+        margin: 3px;
         height: 15px;
         width: 15px;
         background-image: url("./assets/images/small-shapes/starsmall.svg");
@@ -308,17 +308,17 @@ body {
         background-position: center;
     }
     #opp-played {
-        height: 105px;
-        width: 70px;
+        height: 115px;
+        width: 80px;
         border: 5px rgb(0, 30, 0) dashed;
     }
     #your-played {
-        height: 105px;
-        width: 70px;
+        height: 115px;
+        width: 80px;
         border: 5px rgb(0, 30, 0) dashed;
     }
     #gold-play {
-        width: 89px;
+        width: 80px;
     }
     #gold-display {
         text-align: center;
@@ -336,7 +336,7 @@ body {
         margin: 0;
     }
     #play-button {
-        padding: 0;
+        padding: 3px;
         font-size: 10px;
     }
     #opp-score-number {
@@ -351,23 +351,22 @@ body {
         text-align: center;
         margin: 0;
     }
-    #opp-score {
+    #opp-score, #opp-score-title {
         height: 105px;
-        width: 87px;
+        width: 80px;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        font-size: 10px;
+        font-size: 8px;
         text-align: center;
         color: yellow;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
     }
-    
-    #your-score {
+    #your-score, #your-score-title {
         height: 105px;
-        width: 87px;
+        width: 80px;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        font-size: 10px;
+        font-size: 8px;
         text-align: center;
         color: yellow;
         display: flex;
@@ -376,7 +375,7 @@ body {
     }
     #round-turn {
         color: white;
-        font-size: 10px;
+        font-size: 9px;
         text-align: center;
     }
     #winner-message {
