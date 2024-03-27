@@ -17,7 +17,6 @@ const hideRules = document.getElementById('hide-rules');
 showRules.addEventListener('click', () => {
     rules.style.display = "block";
     hideRules.style.display = "flex";
-    showRules.style.display = "none";
 })
 
 hideRules.addEventListener('click', () => {
