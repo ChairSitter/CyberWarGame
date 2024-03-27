@@ -356,6 +356,8 @@ body {
     #show-rules {
         top: 3px;
         bottom: auto;
+        left: auto;
+        right: 3px;
     }
     #opp-score-number {
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
