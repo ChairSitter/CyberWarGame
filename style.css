@@ -445,7 +445,7 @@ body {
     }
 }
 
-@media only screen and (max-height: 665px){
+@media only screen and (max-height: 750px){
     #gold-play {
         margin: 0;
     }
