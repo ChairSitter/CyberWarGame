@@ -86,6 +86,11 @@ body {
     border: 5px rgb(0, 30, 0) dashed;
 }
 
+#opp-played .your-card {
+    transform: rotate(180deg); 
+    transform-origin: center center;
+}
+
 #your-played {
     height: 220px;
     width: 160px;
