@@ -36,7 +36,6 @@ body {
     background-color: rgb(98, 110, 138);
     border: black solid 5px;
     left: 0px;
-    opacity: 75%;
     display: none;
     padding: 5px;
     text-align: center;
@@ -417,7 +416,6 @@ body {
         background-color: rgb(98, 110, 138);
         border: black solid 5px;
         top: 0px;
-        opacity: 100%;
         display: none;
         text-align: center;
         z-index: 5;
@@ -427,7 +425,6 @@ body {
         bottom: 0px;
         display: none;
         left: auto;
-        opacity: 50%;
     }
     #your-color-bonus, #opp-color-bonus {
         font-size: 8px;
