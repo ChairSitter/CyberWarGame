@@ -232,7 +232,7 @@ body {
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    background-image: radial-gradient(black, rgb(138, 51, 1), black, rgb(104, 0, 0), black);
+    background-image: radial-gradient(black, rgb(194, 104, 2), black, rgb(124, 0, 0), black);
     border: solid black 4px;
     margin: 20px 10px 20px 10px;
 }
