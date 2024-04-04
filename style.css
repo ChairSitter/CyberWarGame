@@ -71,6 +71,8 @@ body {
     align-items: center;
     justify-content: center;
     margin: 5px 15px 5px 15px;
+    flex-direction: column;
+    padding: 0;
 }
 
 #middle-div {
@@ -208,6 +210,11 @@ body {
     width: 23px;
     background-image: url("./assets/images/star.svg");
     background-position: center;
+}
+
+#gold-display > div, #gold-display > div > div {
+    margin: 0px;
+    padding: 0px;
 }
 
 /*Cards (element is div)*/
