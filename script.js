@@ -183,10 +183,17 @@ let randomShape = () => {
 let randomNumber = () => {
     return (1 + Math.floor(Math.random() * 8));
 }
-let goldAmountArray = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
-    4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7,
-    8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 12, 12, 12, 12, 12, 12, 12, 12, 12,
-    13, 13, 13, 13, 13, 13, 13, 13, 14, 14, 14, 14, 14, 14, 14, 15, 15, 15, 15, 15, 15, 16, 16, 16, 16, 16, 17, 17, 17, 17, 18, 18, 18, 19, 19, 20];
+
+let goldAmountArray = [];
+
+const setGoldAmountArray = (limit) => {
+    for(let i = 1; i < limit + 1; i++){
+        for(let j = 0; j < ((limit+1)-i); j++){
+           goldAmountArray.push(i); 
+        }
+    }
+}
+setGoldAmountArray(30);
 
 let cardYouPlayed;
 let cardOppPlayed;
@@ -266,7 +273,7 @@ const round = () => {
         }
         turnNumber++;
         playButton.textContent = "NEXT";
-        let goldNumber = goldAmountArray[Math.floor(Math.random() * 210)];
+        let goldNumber = goldAmountArray[Math.floor(Math.random() * goldAmountArray.length)];
         let randomMatchShape = shapes[Math.floor(Math.random() * (shapes.length-1)) + 1];
         goldDisplayP.textContent =  "$" + goldNumber;
         shapeMatchDiv.appendChild(getShapeImg(randomMatchShape));
