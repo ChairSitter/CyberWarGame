@@ -276,10 +276,7 @@ const round = () => {
         let goldNumber = goldAmountArray[Math.floor(Math.random() * goldAmountArray.length)];
         let randomMatchShape = shapes[Math.floor(Math.random() * (shapes.length-1)) + 1];
         goldDisplayP.textContent =  "$" + goldNumber;
-        let middleShapeDiv = getShapeImg(randomMatchShape);
-        middleShapeDiv.setAttribute('id', 'middle-shape');
-        middleShapeDiv.textContent = "$5"
-        shapeMatchDiv.appendChild(middleShapeDiv);
+        shapeMatchDiv.appendChild(getShapeImg(randomMatchShape));
         winnerMessage.textContent = "";
         for(let i = 0; i < yourCards.length; i++){
             console.log(yourCards[i])

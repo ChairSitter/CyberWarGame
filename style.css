@@ -79,14 +79,6 @@ body {
     opacity: 50%;
 }
 
-#middle-shape {
-    font-size: 10px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 #middle-div {
     display: flex;
     justify-content: center;
