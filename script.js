@@ -276,7 +276,10 @@ const round = () => {
         let goldNumber = goldAmountArray[Math.floor(Math.random() * goldAmountArray.length)];
         let randomMatchShape = shapes[Math.floor(Math.random() * (shapes.length-1)) + 1];
         goldDisplayP.textContent =  "$" + goldNumber;
-        shapeMatchDiv.appendChild(getShapeImg(randomMatchShape));
+        let middleShapeDiv = getShapeImg(randomMatchShape);
+        middleShapeDiv.setAttribute('id', 'middle-shape');
+        middleShapeDiv.textContent = "$5"
+        shapeMatchDiv.appendChild(middleShapeDiv);
         winnerMessage.textContent = "";
         for(let i = 0; i < yourCards.length; i++){
             console.log(yourCards[i])
@@ -460,34 +463,34 @@ const round = () => {
                         if(cardYouPlayed.getShapeRank() > cardOppPlayed.getShapeRank()){
                             outcome = goldNumber + cardYouPlayed.getNumber();
                             if(cardYouPlayed.getShape() === randomMatchShape){
-                                outcome = outcome + cardYouPlayed.getShapeSides();
+                                outcome = outcome + 5;
                             }
                         } else if (cardYouPlayed.getShapeRank() < cardOppPlayed.getShapeRank()){
                             outcome = (goldNumber + cardOppPlayed.getNumber()) * -1;
                             if(cardOppPlayed.getShape() === randomMatchShape){
-                                outcome = outcome - cardOppPlayed.getShapeSides();
+                                outcome = outcome - 5;
                             }
                         } else {
                             if(cardYouPlayed.getNumber() > cardOppPlayed.getNumber()){
                                 outcome = goldNumber + cardYouPlayed.getNumber();
                                 if(cardYouPlayed.getShape() === randomMatchShape){
-                                    outcome = outcome + cardYouPlayed.getShapeSides();
+                                    outcome = outcome + 5;
                                 }
                             } else if (cardYouPlayed.getNumber() < cardOppPlayed.getNumber()){
                                 outcome = (goldNumber + cardOppPlayed.getNumber()) * -1;
                                 if(cardOppPlayed.getShape() === randomMatchShape){
-                                    outcome = outcome - cardOppPlayed.getShapeSides();
+                                    outcome = outcome - 5;
                                 }
                             } else {
                                 if(cardYouPlayed.getColorRank() > cardOppPlayed.getColorRank()){
                                     outcome = goldNumber + cardYouPlayed.getNumber();
                                     if(cardYouPlayed.getShape() === randomMatchShape){
-                                        outcome = outcome + cardYouPlayed.getShapeSides();
+                                        outcome = outcome + 5;
                                     }
                                 } else if (cardYouPlayed.getColorRank() < cardOppPlayed.getColorRank()){
                                     outcome = (goldNumber + cardOppPlayed.getNumber()) * -1;
                                     if(cardOppPlayed.getShape() === randomMatchShape){
-                                        outcome = outcome - cardOppPlayed.getShapeSides();
+                                        outcome = outcome - 5;
                                     }
                                 } else {
                                     outcome = 0;
