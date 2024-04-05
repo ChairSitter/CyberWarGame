@@ -1,6 +1,7 @@
 const yourCards = document.getElementById('your-cards');
 const oppCards = document.getElementById('opp-cards');
-const goldDisplay = document.getElementById('gold-display');
+const goldDisplayP = document.getElementById('gold-display-p');
+const shapeMatchDiv = document.getElementById('shape-match-div');
 const yourPlayed = document.getElementById('your-played');
 const oppPlayed = document.getElementById('opp-played');
 const winnerMessage = document.getElementById('winner-message');
@@ -150,6 +151,22 @@ class Card {
             default: break;
         }
     }
+
+    getShapeSides = () => {
+        switch (this.#shape) {
+            case 'triangle':
+                return 3;
+            case 'square':
+                return 4;
+            case 'pentagon':
+                return 5;
+            case 'octagon':
+                return 8;
+            case 'star':
+                return 10;
+            default: break;
+        }
+    }
 }
 
 //randomizers for creating new cards and gold amounts
@@ -178,6 +195,22 @@ let turnNumber = 1;
 let roundNumber = 0;
 
 isFirst = true;
+
+getShapeMatchSides = (shape) => {
+    switch (shape) {
+        case 'triangle':
+            return 3;
+        case 'square':
+            return 4;
+        case 'pentagon':
+            return 5;
+        case 'octagon':
+            return 8;
+        case 'star':
+            return 10;
+        default: break;
+    }
+}
 
 const round = () => {
     let your4AgoColor = null;
@@ -218,6 +251,9 @@ const round = () => {
 
     //code for individual turn
     const turn = () => {
+        while(shapeMatchDiv.firstChild){
+            shapeMatchDiv.removeChild(shapeMatchDiv.firstChild);
+        }
         yourColorBonus.textContent = "";
         oppColorBonus.textContent = "";
         playButton.style.visibility = "hidden";
@@ -231,7 +267,9 @@ const round = () => {
         turnNumber++;
         playButton.textContent = "NEXT";
         let goldNumber = goldAmountArray[Math.floor(Math.random() * 210)];
-        goldDisplay.textContent =  "$" + goldNumber;
+        let randomMatchShape = shapes[Math.floor(Math.random() * (shapes.length-1)) + 1];
+        goldDisplayP.textContent =  "$" + goldNumber;
+        shapeMatchDiv.appendChild(getShapeImg(randomMatchShape));
         winnerMessage.textContent = "";
         for(let i = 0; i < yourCards.length; i++){
             console.log(yourCards[i])
@@ -414,18 +452,36 @@ const round = () => {
                         }
                         if(cardYouPlayed.getShapeRank() > cardOppPlayed.getShapeRank()){
                             outcome = goldNumber + cardYouPlayed.getNumber();
+                            if(cardYouPlayed.getShape() === randomMatchShape){
+                                outcome = outcome + cardYouPlayed.getShapeSides();
+                            }
                         } else if (cardYouPlayed.getShapeRank() < cardOppPlayed.getShapeRank()){
                             outcome = (goldNumber + cardOppPlayed.getNumber()) * -1;
+                            if(cardOppPlayed.getShape() === randomMatchShape){
+                                outcome = outcome - cardOppPlayed.getShapeSides();
+                            }
                         } else {
                             if(cardYouPlayed.getNumber() > cardOppPlayed.getNumber()){
                                 outcome = goldNumber + cardYouPlayed.getNumber();
+                                if(cardYouPlayed.getShape() === randomMatchShape){
+                                    outcome = outcome + cardYouPlayed.getShapeSides();
+                                }
                             } else if (cardYouPlayed.getNumber() < cardOppPlayed.getNumber()){
                                 outcome = (goldNumber + cardOppPlayed.getNumber()) * -1;
+                                if(cardOppPlayed.getShape() === randomMatchShape){
+                                    outcome = outcome - cardOppPlayed.getShapeSides();
+                                }
                             } else {
                                 if(cardYouPlayed.getColorRank() > cardOppPlayed.getColorRank()){
                                     outcome = goldNumber + cardYouPlayed.getNumber();
+                                    if(cardYouPlayed.getShape() === randomMatchShape){
+                                        outcome = outcome + cardYouPlayed.getShapeSides();
+                                    }
                                 } else if (cardYouPlayed.getColorRank() < cardOppPlayed.getColorRank()){
                                     outcome = (goldNumber + cardOppPlayed.getNumber()) * -1;
+                                    if(cardOppPlayed.getShape() === randomMatchShape){
+                                        outcome = outcome - cardOppPlayed.getShapeSides();
+                                    }
                                 } else {
                                     outcome = 0;
                                 }
