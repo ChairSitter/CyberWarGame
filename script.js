@@ -193,7 +193,7 @@ const setGoldAmountArray = (limit) => {
         }
     }
 }
-setGoldAmountArray(30);
+setGoldAmountArray(20);
 
 let cardYouPlayed;
 let cardOppPlayed;
@@ -203,23 +203,24 @@ let roundNumber = 0;
 
 isFirst = true;
 
-getShapeMatchSides = (shape) => {
-    switch (shape) {
-        case 'triangle':
-            return 3;
-        case 'square':
-            return 4;
-        case 'pentagon':
-            return 5;
-        case 'octagon':
-            return 8;
-        case 'star':
-            return 10;
-        default: break;
-    }
-}
+// getShapeMatchSides = (shape) => {
+//     switch (shape) {
+//         case 'triangle':
+//             return 3;
+//         case 'square':
+//             return 4;
+//         case 'pentagon':
+//             return 5;
+//         case 'octagon':
+//             return 8;
+//         case 'star':
+//             return 10;
+//         default: break;
+//     }
+// }
 
 const round = () => {
+    roundNumber++;
     let your4AgoColor = null;
     let your3AgoColor = null;
     let your2AgoColor = null;
@@ -231,7 +232,7 @@ const round = () => {
     let opp2AgoColor = null;
     let oppPrevColor = null;
     let oppCurrentColor = null;
-    roundNumber++;
+
     let oppCardsArray = [new Card(randomNumber(), randomColor(), randomShape()), new Card(randomNumber(), randomColor(), randomShape()), new Card(randomNumber(), randomColor(), randomShape()),
     new Card(randomNumber(), randomColor(), randomShape()), new Card(randomNumber(), randomColor(), randomShape())];
     let yourCardsArray = [new Card(randomNumber(), randomColor(), randomShape()), new Card(randomNumber(), randomColor(), randomShape()), new Card(randomNumber(), randomColor(), randomShape()),
@@ -265,7 +266,7 @@ const round = () => {
         oppColorBonus.textContent = "";
         playButton.style.visibility = "hidden";
         roundTurn.textContent = `ROUND ${roundNumber} TURN ${turnNumber}`;
-        console.log(turnNumber, roundNumber, "before")
+
         if(turnNumber === 5){
             turnNumber = 0;
             playButton.removeEventListener("click", turn);
@@ -278,9 +279,7 @@ const round = () => {
         goldDisplayP.textContent =  "$" + goldNumber;
         shapeMatchDiv.appendChild(getShapeImg(randomMatchShape));
         winnerMessage.textContent = "";
-        for(let i = 0; i < yourCards.length; i++){
-            console.log(yourCards[i])
-        }
+
         //remove and re-display cards
         while(yourCards.firstChild){
             yourCards.removeChild(yourCards.firstChild)
@@ -326,9 +325,8 @@ const round = () => {
 
                 const computerPlayLogic = () => {
                     let cardOppPlayed;
-                    //if gold is less than 5
                     let randomNumber = Math.random();
-                    if (goldNumber <= 8) {
+                    if (goldNumber <= 5) {
                         if (randomNumber < .15) {
                             if (oppCardsArray.length > 2) {
                                 cardOppPlayed = 2;
@@ -346,8 +344,7 @@ const round = () => {
                         } else {
                             cardOppPlayed = 0;
                         }
-                    //if gold is between 6 and 10
-                    } else if (goldNumber > 8 && goldNumber <= 15) {
+                    } else if (goldNumber > 5 && goldNumber <= 10) {
                         if (oppCardsArray.length == 5) {
                             cardOppPlayed = 2;
                         } else if (oppCardsArray.length == 4) {
@@ -367,7 +364,7 @@ const round = () => {
                         } else {
                             cardOppPlayed = 0;
                         }
-                    } else if (goldNumber > 15 && goldNumber <= 22){
+                    } else if (goldNumber > 10 && goldNumber <= 15){
                         if(oppCardsArray.length === 5){
                             if(randomNumber < .2){
                                 for (let i in oppCardsArray) {
@@ -531,39 +528,39 @@ const round = () => {
                     
 
                     if((yourCurrentColor === yourPrevColor) && (yourPrevColor === your2AgoColor) && (your2AgoColor === your3AgoColor) && (your3AgoColor === your4AgoColor)){
-                        yourScore = yourScore + 20;
+                        yourScore = yourScore + 16;
                         yourScoreDiv.textContent = "$" + yourScore;
-                        yourColorBonus.textContent = `5th straight ${cardYouPlayed.getColorName()} card: +$20`
+                        yourColorBonus.textContent = `5th straight ${cardYouPlayed.getColorName()} card: +$16`
                     }else if((yourCurrentColor === yourPrevColor) && (yourPrevColor === your2AgoColor) && (your2AgoColor === your3AgoColor)){
-                        yourScore = yourScore + 15;
+                        yourScore = yourScore + 12;
                         yourScoreDiv.textContent = "$" + yourScore;
-                        yourColorBonus.textContent = `4th straight ${cardYouPlayed.getColorName()} card: +$15`
+                        yourColorBonus.textContent = `4th straight ${cardYouPlayed.getColorName()} card: +$12`
                     }else if((yourCurrentColor === yourPrevColor) && (yourPrevColor === your2AgoColor)){
-                        yourScore = yourScore + 10;
+                        yourScore = yourScore + 8;
                         yourScoreDiv.textContent = "$" + yourScore;
-                        yourColorBonus.textContent = `3rd straight ${cardYouPlayed.getColorName()} card: +$10`
+                        yourColorBonus.textContent = `3rd straight ${cardYouPlayed.getColorName()} card: +$8`
                     }else if(yourCurrentColor === yourPrevColor){
-                        yourScore = yourScore + 5;
+                        yourScore = yourScore + 4;
                         yourScoreDiv.textContent = "$" + yourScore;
-                        yourColorBonus.textContent = `2nd straight ${cardYouPlayed.getColorName()} card: +$5`
+                        yourColorBonus.textContent = `2nd straight ${cardYouPlayed.getColorName()} card: +$4`
                     }
 
                     if((oppCurrentColor === oppPrevColor) && (oppPrevColor === opp2AgoColor) && (opp2AgoColor === opp3AgoColor) && (opp3AgoColor === opp4AgoColor)){
-                        oppScore = oppScore + 20;
+                        oppScore = oppScore + 16;
                         oppScoreDiv.textContent = "$" + oppScore;
-                        oppColorBonus.textContent = `5th straight ${cardOppPlayed.getColorName()} card: +$20`
+                        oppColorBonus.textContent = `5th straight ${cardOppPlayed.getColorName()} card: +$16`
                     }else if((oppCurrentColor === oppPrevColor) && (oppPrevColor === opp2AgoColor) && (opp2AgoColor === opp3AgoColor)){
-                        oppScore = oppScore + 15;
+                        oppScore = oppScore + 12;
                         oppScoreDiv.textContent = "$" + oppScore;
-                        oppColorBonus.textContent = `4th straight ${cardOppPlayed.getColorName()} card: +$15`
+                        oppColorBonus.textContent = `4th straight ${cardOppPlayed.getColorName()} card: +$12`
                     }else if((oppCurrentColor === oppPrevColor) && (oppPrevColor === opp2AgoColor)){
-                        oppScore = oppScore + 10;
+                        oppScore = oppScore + 8;
                         oppScoreDiv.textContent = "$" + oppScore;
-                        oppColorBonus.textContent = `3rd straight ${cardOppPlayed.getColorName()} card: +$10`
+                        oppColorBonus.textContent = `3rd straight ${cardOppPlayed.getColorName()} card: +$8`
                     }else if(oppCurrentColor === oppPrevColor){
-                        oppScore = oppScore + 5;
+                        oppScore = oppScore + 4;
                         oppScoreDiv.textContent = "$" + oppScore;
-                        oppColorBonus.textContent = `2nd straight ${cardOppPlayed.getColorName()} card: +$5`
+                        oppColorBonus.textContent = `2nd straight ${cardOppPlayed.getColorName()} card: +$4`
                     }
                     
                     let outcomeResult = determineOutcome();
