@@ -285,7 +285,7 @@ body {
         width: 70px;
         margin: 0 1.5px 0 1.5px;
     }
-    .circle-div {
+    .your-card .circle-div {
         margin: 3px;
         height: 15px;
         width: 15px;
@@ -293,7 +293,7 @@ body {
         background-repeat: no-repeat;
         background-position: center;
     }
-    .square-div {
+    .your-card .square-div {
         margin: 3px;
         height: 15px;
         width: 15px;
@@ -301,7 +301,7 @@ body {
         background-repeat: no-repeat;
         background-position: center;
     }
-    .triangle-div {
+    .your-card .triangle-div {
         margin: 3px;
         height: 15px;
         width: 15px;
@@ -309,7 +309,7 @@ body {
         background-repeat: no-repeat;
         background-position: center;
     }
-    .pentagon-div {
+    .your-card .pentagon-div {
         margin: 3px;
         height: 15px;
         width: 15px;
@@ -317,7 +317,7 @@ body {
         background-repeat: no-repeat;
         background-position: center;
     }
-    .octagon-div {
+    .your-card .octagon-div {
         margin: 3px;
         height: 15px;
         width: 15px;
@@ -325,7 +325,7 @@ body {
         background-repeat: no-repeat;
         background-position: center;
     }
-    .star-div {
+    .your-card .star-div {
         margin: 3px;
         height: 15px;
         width: 15px;

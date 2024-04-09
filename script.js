@@ -152,21 +152,21 @@ class Card {
         }
     }
 
-    getShapeSides = () => {
-        switch (this.#shape) {
-            case 'triangle':
-                return 3;
-            case 'square':
-                return 4;
-            case 'pentagon':
-                return 5;
-            case 'octagon':
-                return 8;
-            case 'star':
-                return 10;
-            default: break;
-        }
-    }
+    // getShapeSides = () => {
+    //     switch (this.#shape) {
+    //         case 'triangle':
+    //             return 3;
+    //         case 'square':
+    //             return 4;
+    //         case 'pentagon':
+    //             return 5;
+    //         case 'octagon':
+    //             return 8;
+    //         case 'star':
+    //             return 10;
+    //         default: break;
+    //     }
+    // }
 }
 
 //randomizers for creating new cards and gold amounts
@@ -275,7 +275,7 @@ const round = () => {
         turnNumber++;
         playButton.textContent = "NEXT";
         let goldNumber = goldAmountArray[Math.floor(Math.random() * goldAmountArray.length)];
-        let randomMatchShape = shapes[Math.floor(Math.random() * (shapes.length-1)) + 1];
+        let randomMatchShape = shapes[Math.floor(Math.random() * (shapes.length))];
         goldDisplayP.textContent =  "$" + goldNumber;
         shapeMatchDiv.appendChild(getShapeImg(randomMatchShape));
         winnerMessage.textContent = "";
