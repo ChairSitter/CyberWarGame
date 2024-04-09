@@ -120,7 +120,7 @@ body {
     color: yellow;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    align-items: center;
 }
 
 #your-score {
@@ -132,7 +132,7 @@ body {
     color: yellow;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    align-items: center;
 }
 
 #opp-score-number {
@@ -159,11 +159,16 @@ body {
 }
 
 #your-color-bonus, #opp-color-bonus {
-    height: 30px;
-    width: 140px;
-    font-size: 15px;
+    height: 23.6px;
+    width: 120px;
+    font-size: 12px;
+    line-height: 10px;
     font-family: 'Times New Roman', Times, serif;
-    color: white;
+    color: black;
+    display: flex;
+    padding: 1px;
+    border: 1px black solid;
+    border-radius: 3px;
 }
 
 /*Shape divs*/
@@ -384,7 +389,7 @@ body {
         text-align: center;
         margin: 0;
     }
-    #opp-score, #opp-score-title {
+    #opp-score {
         height: 105px;
         width: 80px;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -395,7 +400,8 @@ body {
         flex-direction: column;
         justify-content: flex-start;
     }
-    #your-score, #your-score-title {
+
+    #your-score {
         height: 105px;
         width: 80px;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -406,6 +412,7 @@ body {
         flex-direction: column;
         justify-content: flex-start;
     }
+
     #round-turn {
         color: white;
         font-size: 12px;
@@ -436,10 +443,12 @@ body {
         left: auto;
     }
     #your-color-bonus, #opp-color-bonus {
-        font-size: 8px;
-        font-family: 'Times New Roman', Times, serif;
-        color: white;
         width: 70px;
+        height: 20px;
+        font-size: 8px;
+        line-height: 8px;
+        font-family: 'Times New Roman', Times, serif;
+        color: black;
     }
     #opp-cards, #your-cards {
         position: absolute;

@@ -259,11 +259,16 @@ const round = () => {
 
     //code for individual turn
     const turn = () => {
+        if(turnNumber === 1){
+            yourColorBonus.style.backgroundColor = "transparent";
+            oppColorBonus.style.backgroundColor = "transparent";
+            yourColorBonus.textContent = "";
+            oppColorBonus.textContent = ""; 
+        }
         while(shapeMatchDiv.firstChild){
             shapeMatchDiv.removeChild(shapeMatchDiv.firstChild);
         }
-        yourColorBonus.textContent = "";
-        oppColorBonus.textContent = "";
+
         playButton.style.visibility = "hidden";
         roundTurn.textContent = `ROUND ${roundNumber} TURN ${turnNumber}`;
 
@@ -543,6 +548,8 @@ const round = () => {
                         yourScore = yourScore + 4;
                         yourScoreDiv.textContent = "$" + yourScore;
                         yourColorBonus.textContent = `2nd straight ${cardYouPlayed.getColorName()} card: +$4`
+                    } else {
+                        yourColorBonus.textContent = `Play a ${cardYouPlayed.getColorName()} card for bonus`;
                     }
 
                     if((oppCurrentColor === oppPrevColor) && (oppPrevColor === opp2AgoColor) && (opp2AgoColor === opp3AgoColor) && (opp3AgoColor === opp4AgoColor)){
@@ -561,7 +568,11 @@ const round = () => {
                         oppScore = oppScore + 4;
                         oppScoreDiv.textContent = "$" + oppScore;
                         oppColorBonus.textContent = `2nd straight ${cardOppPlayed.getColorName()} card: +$4`
+                    } else {
+                        oppColorBonus.textContent = `Play a ${cardOppPlayed.getColorName()} card for bonus`; 
                     }
+                    oppColorBonus.style.backgroundColor = cardOppPlayed.getColor();
+                    yourColorBonus.style.backgroundColor = cardYouPlayed.getColor();
                     
                     let outcomeResult = determineOutcome();
                     if(outcomeResult > 0){
