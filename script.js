@@ -549,7 +549,7 @@ const round = () => {
                         yourScoreDiv.textContent = "$" + yourScore;
                         yourColorBonus.textContent = `2nd straight ${cardYouPlayed.getColorName()} card: +$4`
                     } else {
-                        yourColorBonus.textContent = `Play a ${cardYouPlayed.getColorName()} card for bonus`;
+                        yourColorBonus.textContent = "";
                     }
 
                     if((oppCurrentColor === oppPrevColor) && (oppPrevColor === opp2AgoColor) && (opp2AgoColor === opp3AgoColor) && (opp3AgoColor === opp4AgoColor)){
@@ -569,7 +569,7 @@ const round = () => {
                         oppScoreDiv.textContent = "$" + oppScore;
                         oppColorBonus.textContent = `2nd straight ${cardOppPlayed.getColorName()} card: +$4`
                     } else {
-                        oppColorBonus.textContent = `Play a ${cardOppPlayed.getColorName()} card for bonus`; 
+                        oppColorBonus.textContent = ""; 
                     }
                     oppColorBonus.style.backgroundColor = cardOppPlayed.getColor();
                     yourColorBonus.style.backgroundColor = cardYouPlayed.getColor();
