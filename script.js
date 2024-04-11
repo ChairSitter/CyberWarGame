@@ -177,7 +177,7 @@ const setGoldAmountArray = (limit) => {
         }
     }
 }
-setGoldAmountArray(30);
+setGoldAmountArray(20);
 
 let cardYouPlayed;
 let cardOppPlayed;
@@ -299,7 +299,7 @@ const round = () => {
                 const computerPlayLogic = () => {
                     let cardOppPlayed;
                     let randomNumber = Math.random();
-                    if (goldNumber <= 8) {
+                    if (goldNumber <= 5) {
                         if (randomNumber < .15) {
                             if (oppCardsArray.length > 2) {
                                 cardOppPlayed = 2;
@@ -317,7 +317,7 @@ const round = () => {
                         } else {
                             cardOppPlayed = 0;
                         }
-                    } else if (goldNumber > 8 && goldNumber <= 15) {
+                    } else if (goldNumber > 5 && goldNumber <= 10) {
                         if (oppCardsArray.length == 5) {
                             cardOppPlayed = 2;
                         } else if (oppCardsArray.length == 4) {
@@ -337,7 +337,7 @@ const round = () => {
                         } else {
                             cardOppPlayed = 0;
                         }
-                    } else if (goldNumber > 15 && goldNumber <= 20){
+                    } else if (goldNumber > 10 && goldNumber <= 15){
                         if(oppCardsArray.length === 5){
                             if(randomNumber < .2){
                                 for (let i in oppCardsArray) {
