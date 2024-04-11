@@ -151,22 +151,6 @@ class Card {
             default: break;
         }
     }
-
-    // getShapeSides = () => {
-    //     switch (this.#shape) {
-    //         case 'triangle':
-    //             return 3;
-    //         case 'square':
-    //             return 4;
-    //         case 'pentagon':
-    //             return 5;
-    //         case 'octagon':
-    //             return 8;
-    //         case 'star':
-    //             return 10;
-    //         default: break;
-    //     }
-    // }
 }
 
 //randomizers for creating new cards and gold amounts
@@ -193,7 +177,7 @@ const setGoldAmountArray = (limit) => {
         }
     }
 }
-setGoldAmountArray(20);
+setGoldAmountArray(30);
 
 let cardYouPlayed;
 let cardOppPlayed;
@@ -202,22 +186,6 @@ let turnNumber = 1;
 let roundNumber = 0;
 
 isFirst = true;
-
-// getShapeMatchSides = (shape) => {
-//     switch (shape) {
-//         case 'triangle':
-//             return 3;
-//         case 'square':
-//             return 4;
-//         case 'pentagon':
-//             return 5;
-//         case 'octagon':
-//             return 8;
-//         case 'star':
-//             return 10;
-//         default: break;
-//     }
-// }
 
 const round = () => {
     roundNumber++;
@@ -331,7 +299,7 @@ const round = () => {
                 const computerPlayLogic = () => {
                     let cardOppPlayed;
                     let randomNumber = Math.random();
-                    if (goldNumber <= 5) {
+                    if (goldNumber <= 8) {
                         if (randomNumber < .15) {
                             if (oppCardsArray.length > 2) {
                                 cardOppPlayed = 2;
@@ -349,7 +317,7 @@ const round = () => {
                         } else {
                             cardOppPlayed = 0;
                         }
-                    } else if (goldNumber > 5 && goldNumber <= 10) {
+                    } else if (goldNumber > 8 && goldNumber <= 15) {
                         if (oppCardsArray.length == 5) {
                             cardOppPlayed = 2;
                         } else if (oppCardsArray.length == 4) {
@@ -369,7 +337,7 @@ const round = () => {
                         } else {
                             cardOppPlayed = 0;
                         }
-                    } else if (goldNumber > 10 && goldNumber <= 15){
+                    } else if (goldNumber > 15 && goldNumber <= 20){
                         if(oppCardsArray.length === 5){
                             if(randomNumber < .2){
                                 for (let i in oppCardsArray) {
